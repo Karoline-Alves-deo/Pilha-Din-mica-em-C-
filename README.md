@@ -22,17 +22,19 @@ Encapsulamento.
 
 ### Cada elemento da pilha é representado por um nó:
 
+```
 struct No {
     ItemType valor;
     No* proximo;
 };
-
+```
 ### A classe principal:
 
+```
 class dynamicstack {
 private:
     No* NoTopo;
-
+```
 public:
     dynamicstack();
     ~dynamicstack();
@@ -42,13 +44,15 @@ public:
     ItemType pop();
     void print();
 };
+```
 ---
 ## Funcionamento
 
 
 ### Inicializa a pilha vazia: (Construtor)
-
+```
 NoTopo = NULL;
+```
 
 ### Libera toda a memória alocada dinamicamente: (Destrutor)
 
