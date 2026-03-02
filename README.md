@@ -102,4 +102,4 @@ Digite 3 para imprimir a pilha.
 ## Autora  
 
 **Karoline Alves**  
-Entusiasta em tecnologia, robótica e computação em nuvem.
+Entusiasta em tecnologia da informação, robótica e computação em nuvem.
