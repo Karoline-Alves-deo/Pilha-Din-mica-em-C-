@@ -1,4 +1,4 @@
-# Pilha-Din-mica-em-C-
+# Pilha Dinamica em C++
 Implementação de uma pilha dinâmica utilizando lista encadeada simples em C++.  A estrutura segue o princípio LIFO (Last In, First Out), onde o último elemento inserido é o primeiro a ser removido.
 
 
@@ -42,6 +42,7 @@ public:
     ItemType pop();
     void print();
 };
+---
 ## Funcionamento
 
 
@@ -83,7 +84,7 @@ Retorna true se a pilha estiver cheia.
 
 Percorre a pilha do topo até o último elemento e imprime os valores.
 Complexidade: O(n)
-
+---
 ## Como Executar
 ### Compilar
 g++ main_dynamicstack.cpp dynamicstack.cpp -o pilha
@@ -97,3 +98,8 @@ Digite 0 para parar o programa;
 Digite 1 para inserir um elemento;
 Digite 2 para remover um elemento;
 Digite 3 para imprimir a pilha.
+--- 
+## Autora  
+
+**Karoline Alves**  
+Entusiasta em tecnologia, robótica e computação em nuvem.
