@@ -45,6 +45,7 @@ public:
 };
 ```
 ---
+
 ## Funcionamento
 
 
@@ -88,6 +89,7 @@ Retorna true se a pilha estiver cheia.
 
 Percorre a pilha do topo até o último elemento e imprime os valores.
 Complexidade: O(n)
+
 ---
 ## Como Executar
 ### Compilar
@@ -102,7 +104,153 @@ Digite 0 para parar o programa;
 Digite 1 para inserir um elemento;
 Digite 2 para remover um elemento;
 Digite 3 para imprimir a pilha.
---- 
+
+---
+## Códigos:
+### 📂 dynamicstack.h
+```
+
+typedef int ItemType;
+
+struct No 
+{
+    ItemType valor;
+    No* proximo;
+};
+
+class dynamicstack{
+    private:
+    No* NoTopo;
+
+    public:
+    dynamicstack(); 
+    ~dynamicstack(); 
+    bool isempty(); 
+    bool isfull(); 
+    void push(ItemType item); 
+    ItemType pop(); 
+    void print(); 
+
+    
+};
+```
+### 📂 dynamicstack.ccp
+```
+#include <iostream>
+#include "dynamicstack.h"
+#include <cstddef> //NULL
+
+using namespace std;
+
+    dynamicstack::dynamicstack() //Construtor 
+    {
+        NoTopo = NULL;
+    }
+
+    dynamicstack::~dynamicstack() //Destrutor
+    {
+        No* NoTemp;
+        while (NoTopo != NULL){
+            NoTemp = NoTopo;
+            NoTopo = NoTopo->proximo;
+            delete NoTemp;
+        }
+    }
+
+    bool dynamicstack::isempty() // Verifica se a pilha esta vazia
+    {
+        return (NoTopo == NULL);
+    }
+
+    bool dynamicstack::isfull() // Verifica se a pilha esta cheia
+    {
+        No* NoNovo;
+        try{
+            NoNovo = new No;
+            delete NoNovo;
+            return false;
+        } catch(bad_alloc exception){
+            return true;
+        }
+    }
+
+    void dynamicstack::push(ItemType item) 
+    {
+        if (isfull()){
+            cout << "ERRO.Pilha esta cheia!\n";
+            cout << "Nao eh possivel inserir este elemento.\n";
+        } else{
+            No* NoNovo = new No;
+            NoNovo->valor = item;
+            NoNovo->proximo = NoTopo;
+            NoTopo = NoNovo;
+        }
+    }
+
+    ItemType dynamicstack::pop()
+    {
+        if (isempty()){
+            cout << "ERRO. Pilha esta vazia!\n";
+            cout << "Nao eh possivel remover nenhum elemento.\n";
+            return 0;
+        } else{
+            No* NoTemp;
+            NoTemp = NoTopo;
+            ItemType item = NoTopo->valor;
+            NoTopo = NoTopo->proximo;
+            delete NoTemp;
+            return item;
+        }
+    }
+
+    void dynamicstack::print() 
+    {
+        No* NoTemp = NoTopo;
+        cout << "Pilha: [ ";
+        while (NoTemp != NULL){
+            cout << NoTemp->valor << " ";
+            NoTemp = NoTemp->proximo;
+        }
+        cout << "]\n";
+    }
+```
+### 📂 main_dynamicstack.ccp
+
+```
+#include <iostream>
+#include "dynamicstack.h"
+
+using namespace std;
+
+int main(){
+    dynamicstack pilha1;
+    ItemType item;
+    int opcao;
+    cout << "-----Gerador de Pilha-----\n";
+
+    do {
+        cout << "Digite 0 para parar o programa!\n";
+        cout << "Digite 1 para inserir um elemento!\n";
+        cout << "Digite 2 para remover um elemento!\n";
+        cout << "Digite 3 para imprimir a pilha!\n";
+        cin >> opcao;
+        if (opcao == 1){
+            cout << "Digite o elemento a ser inserido:\n";
+            cin >> item;
+            pilha1.push(item);
+        } else if (opcao == 2){
+            item = pilha1.pop();
+            cout << "Elemento Removido: " << item << endl;
+        } else if (opcao == 3){
+            pilha1.print();
+        }
+
+    } while(opcao != 0);
+
+    return 0;
+}
+```
+
 ## Autora  
 
 **Karoline Alves**  
