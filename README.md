@@ -34,7 +34,6 @@ struct No {
 class dynamicstack {
 private:
     No* NoTopo;
-```
 public:
     dynamicstack();
     ~dynamicstack();
@@ -55,10 +54,11 @@ NoTopo = NULL;
 ```
 
 ### Libera toda a memória alocada dinamicamente: (Destrutor)
-
+```
 while (NoTopo != NULL) {
-    ...
+...
 }
+```
 Evita vazamento de memória.
 
 ### push(item)
@@ -91,9 +91,9 @@ Complexidade: O(n)
 ---
 ## Como Executar
 ### Compilar
-g++ main_dynamicstack.cpp dynamicstack.cpp -o pilha
+```g++ main_dynamicstack.cpp dynamicstack.cpp -o pilha```
 ### Executar
-./pilha
+```./pilha```
 
 ## 🖥️ Menu Interativo
 O programa possui um menu simples:
