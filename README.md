@@ -10,13 +10,13 @@ Implementação de uma pilha dinâmica utilizando lista encadeada simples em C++
  
  ## Conceitos Utilizados
 
-Estruturas (struct)
-Classes em C++
-Ponteiros
-Alocação dinâmica (new e delete)
-Tratamento de exceções (bad_alloc)
-Lista encadeada
-Encapsulamento
+Estruturas (struct);
+Classes em C++;
+Ponteiros;
+Alocação dinâmica (new e delete);
+Tratamento de exceções (bad_alloc);
+Lista encadeada;
+Encapsulamento.
 
 ## Estrutura da Pilha
 
@@ -58,18 +58,18 @@ Evita vazamento de memória.
 
 ### push(item)
 
-Verifica se há memória disponível
-Cria um novo nó
-Insere no topo da pilha
-Complexidade: O(1)
+Verifica se há memória disponível;
+Cria um novo nó;
+Insere no topo da pilha;
+Complexidade: O(1).
 
 ### pop()
 
-Verifica se a pilha está vazia
-Remove o elemento do topo
-Libera memória
-Retorna o valor removido
-Complexidade: O(1)
+Verifica se a pilha está vazia;
+Remove o elemento do topo;
+Libera memória;
+Retorna o valor removido;
+Complexidade: O(1).
 
 ### isempty()
 
@@ -93,7 +93,7 @@ g++ main_dynamicstack.cpp dynamicstack.cpp -o pilha
 ## 🖥️ Menu Interativo
 O programa possui um menu simples:
 
-Digite 0 para parar o programa
-Digite 1 para inserir um elemento
-Digite 2 para remover um elemento
-Digite 3 para imprimir a pilha
+Digite 0 para parar o programa;
+Digite 1 para inserir um elemento;
+Digite 2 para remover um elemento;
+Digite 3 para imprimir a pilha.
